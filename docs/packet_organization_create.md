@@ -19,10 +19,12 @@ packet organization create [flags]
 ```
   -d, --description string   Description of the organization
   -h, --help                 Help for create
+  -j, --json                 JSON output
   -l, --logo string          Logo URL]
   -n, --name string          Name of the organization
   -t, --twitter string       Twitter URL of the organization
   -w, --website string       Website URL of the organization
+  -y, --yaml                 YAML output
 ```
 
 ### Options inherited from parent commands

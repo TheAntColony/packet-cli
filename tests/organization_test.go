@@ -3,12 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/packethost/packngo"
 	"os"
 	"os/exec"
 	"path"
 	"strings"
 	"testing"
+
+	"github.com/packethost/packngo"
 )
 
 var organizationID string
@@ -107,6 +108,7 @@ func TestOrganizationOperations(t *testing.T) {
 			}
 			if tt.name == "organization delete" && organizationID != "" {
 				tt.args = append(tt.args, organizationID)
+				tt.args = append(tt.args, "-f")
 			}
 
 			cmd := exec.Command(path.Join(dir, binaryName), tt.args...)

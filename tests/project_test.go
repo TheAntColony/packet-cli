@@ -77,6 +77,7 @@ func TestProjectOperations(t *testing.T) {
 
 			if tt.name == "project delete" && projectID != "" {
 				tt.args = append(tt.args, projectID)
+				tt.args = append(tt.args, "-f")
 			}
 			fmt.Println(tt.name, tt.args)
 

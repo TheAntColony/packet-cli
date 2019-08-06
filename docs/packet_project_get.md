@@ -11,7 +11,7 @@ packet project get
   
 Retrieve a specific project:
 packet project get -i [project_UUID]
-
+packet project get -n [project_name]
 	
 
 ```
@@ -23,6 +23,7 @@ packet project get [flags]
 ```
   -h, --help                Help for get
   -j, --json                JSON output
+  -n, --project string      Name of the project
   -i, --project-id string   UUID of the project
   -y, --yaml                YAML output
 ```

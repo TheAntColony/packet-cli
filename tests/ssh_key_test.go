@@ -17,7 +17,7 @@ var sshKeyID string
 func TestSSHKeyOperations(t *testing.T) {
 	client, _ = packngo.NewClientWithBaseURL("Packet CLI", os.Getenv("PACKET_TOKEN"), nil, "https://api.packet.net/")
 
-	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.ssh/rsa_key_3072.pub")
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.ssh/id_rsa.pub")
 	if err != nil {
 		fmt.Println("File reading error", err)
 		return
@@ -74,6 +74,7 @@ func TestSSHKeyOperations(t *testing.T) {
 
 			if tt.name == "ssh-key delete" && sshKeyID != "" {
 				tt.args = append(tt.args, sshKeyID)
+				tt.args = append(tt.args, "-f")
 			}
 			fmt.Println(tt.name, tt.args)
 
